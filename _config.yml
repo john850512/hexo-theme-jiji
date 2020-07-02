@@ -237,10 +237,12 @@ bg_effects:
     enable: true
 
 # Color Theme
+## Different from the origin theme (snail), jiji theme supports dark mode only.
+## If you want to use other mode(origin theme support light, or star), you need to change related config by yourself.
 ## light , dark or star
 ## If you set the value of the `color_theme` to `dark`, set the value of the `highlight_theme` to `night` in `/theme/snail/config.yml`
 ## `mouse_control` is only valid for star themes
-color_theme: light
+color_theme: dark
 mouse_control: false
 
 # Visitor statistics
