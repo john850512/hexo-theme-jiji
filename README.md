@@ -9,11 +9,28 @@ I will list what parts of the changes I have made and what new features have bee
 
 JiJi is the black cat in the japanese movie, **Kiki's Delivery Service**, she is so cuteee
 
+## Features
+
 ## Live Demo
 View live demo on my website: https://meetonfriday.com/
 
-## Theme Preview
+## Quick Start
+### 1. Clone the repo
+```bash
+$ git clone https://github.com/john850512/hexo-theme-jiji.git
+```
+### 2. Installation 
+In this step, you need to install npm & hexo first. See [Documentation](https://hexo.io/docs/index.html) for more detail.
+``` bash
+$ cd hexo-theme-jiji
+$ npm install
+```
 
-## Features
+### 3. Running on localhost
+``` bash
+$ hexo server
+```
+
+And by entering the url: `http://localhost:4000` to check whether the website can display normally.
 
 ## Configuration
