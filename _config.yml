@@ -29,10 +29,10 @@ signature: true #show signature
 signature-img: img/signature/dusign.png
 
 # SNS settings
-github_username:    dusign
-twitter_username:   dusignr
-facebook_username:  Gang Du
-zhihu_username: dusignr
+github_username:    john850512
+twitter_username:   john850512
+facebook_username:  john850512
+zhihu_username: john850512
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -67,13 +67,13 @@ search:
 
 # widget behavior
 ## Archive
-archive_type: 'monthly'
+archive_type: 'yearly'
 show_count: true
 
 
 ## Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 3              # A tag will be featured if the size of it is more than this condition value
 
 
 ## Friends
@@ -105,7 +105,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-photography_dir: photography
+# photography_dir: photography
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -183,7 +183,7 @@ deploy:
   branch: master
 
 ## share
-share: true
+share: false
 
 # Comment
 ## This comment system is gitment
@@ -205,7 +205,7 @@ comment:
 ### netease; qqkg;
 ### if your `library` is `qqkg`, please set `music` as the song url
 music:
-  enable: true
+  enable: false
   library: netease
   music: https://kg.qq.com/node/play?s=7deFpz7Z26Jmv7di&g_f=share_html
 
@@ -228,7 +228,7 @@ bg_effects:
     zIndex: -9
     count: 99
   mouse_click:
-    enable: true
+    enable: false
     content: '"🌱","just do it","🍀"'
     color: '"rgb(121,93,179)"
           ,"rgb(76,180,231)"
@@ -252,5 +252,5 @@ visitor:
 
 # Chinese Blog
 chinese_blog:
-  enable: true
+  enable: false
   url: YOUR_CHINESE_BLOG_URL
