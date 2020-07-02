@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: JiJi Theme
+title: Hexo-theme-jiji
 subtitle: At the bottom of the well, it is destined to see only the sky at the wellhead. 
           However, the starting point only affects the process of reaching your peak and does not determine the height you reach.
 author: john850512
@@ -164,7 +164,7 @@ markdown:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: snail
+theme: jiji
 
 #sitemap
 sitemap:
