@@ -4,26 +4,29 @@ layout: page
 <!-- Top -->
 <% site.posts.each(function(post){ %>
     <% if (post.top) { %>
-
         <div class="post-preview">
-
-            <a href="<%- config.root %><%- post.path %>">
-                <h2 class="post-title">
-                    <img class="top_logo" src="/img/tp.png"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<%- post.title || "Untitled" %>
-                </h2>
-                <h3 class="post-subtitle">
-                    <%- post.subtitle || "" %>
-                </h3>
-                <div class="post-content-preview">
-                    <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
-                </div>
-            </a>
+            <!-- <a href="<%- config.root %><%- post.path %>"> -->
+            <h2 class="post-title">
+                <img class="top_logo" src="/img/tp.png"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;<%- post.title || "Untitled" %>
+            </h2>
+            <h3 class="post-subtitle">
+                <%- post.subtitle || "" %>
+            </h3>
+            <div class="post-content-preview">
+                <%- post.excerpt %>
+            </div>
+            <div class="post-read-more">
+                <a href="<%- url_for(post.path) %>"><%= __('繼續閱讀') %></a>
+            </div>       
+            <!-- </a> -->
             <% if (config.home_posts_tag){%>
+                <!-- origin
                 <p class="post-meta" style="margin: 10px 0;">
                     Posted by <%- post.author || config.author %> on
                     <%= post.date.format(config.date_format) %>
                 </p>
+                -->
                 <div class="tags">
                     <% post.tags.forEach(function(tag){ %>
                       <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
@@ -35,10 +38,8 @@ layout: page
                     <%= post.date.format(config.date_format) %>
                 </p>
             <%}%>
-
         </div>
         <hr>
-
     <% } %>
 <% }); %>
 
@@ -46,29 +47,37 @@ layout: page
 <!-- Main Content -->
 <% page.posts.each(function(post){ %>
     <% if (!post.top) { %>
-
         <div class="post-preview">
-
-            <a href="<%- config.root %><%- post.path %>">
-                <h2 class="post-title">
-                    <%- post.title || "Untitled" %>
-                </h2>
-                <h3 class="post-subtitle">
-                    <%- post.subtitle || "" %>
-                </h3>
-                <div class="post-content-preview">
-                    <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
-                </div>
-            </a>
+            <!-- <a href="<%- config.root %><%- post.path %>"> -->
+            <h2 class="post-title">
+                <%- post.title || "Untitled" %>
+            </h2>
+            <h3 class="post-subtitle">
+                <%- post.subtitle || "" %>
+            </h3>
+            <div class="post-content-preview">
+                <%- post.excerpt %>
+            </div>
+            <div class="post-read-more">
+                <a href="<%- url_for(post.path) %>"><%= __('繼續閱讀') %></a>
+            </div>       
+            <!-- </a> -->
             <% if (config.home_posts_tag){%>
+                <!-- origin
                 <p class="post-meta" style="margin: 10px 0;">
                     Posted by <%- post.author || config.author %> on
                     <%= post.date.format(config.date_format) %>
                 </p>
+                -->
                 <div class="tags">
+                    <a href="<%- url_for(post.path) %>"><%= __('read more') %></a>
                     <% post.tags.forEach(function(tag){ %>
                       <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
                     <% }) %>
+                </div>
+                <div class="readmore">
+                    <a href="<%- url_for(post.path) %>"><%= __('read more') %></a>
+                
                 </div>
             <%} else {%>
                 <p class="post-meta">
@@ -76,10 +85,8 @@ layout: page
                     <%= post.date.format(config.date_format) %>
                 </p>
             <%}%>
-
         </div>
         <hr>
-
     <% } %>
 <% }); %>
 
@@ -98,4 +105,3 @@ layout: page
         </li>
     <% } %>
 </ul>
-

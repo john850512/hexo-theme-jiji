@@ -18,7 +18,7 @@ categories:
 ![hexo-theme-snail](snail.png)
 
 Hexo-theme-snail is a succinct hexo theme. It has two colors, light and star, that can be set according to your own preferences in the settings, and also has the functions of sharing and commenting. More features are under development.
-
+<!-- more -->
 ## Features
 - light color theme and star theme
 - diversified comment system
