@@ -32,12 +32,11 @@ layout: page
                       <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
                     <% }) %>
                 </div>
-            <%} else {%>
-                <p class="post-meta">
-                    Posted by <%- post.author || config.author %> on
-                    <%= post.date.format(config.date_format) %>
-                </p>
             <%}%>
+            <p class="post-meta">
+                Posted by <%- post.author || config.author %> on
+                <%= post.date.format(config.date_format) %>
+            </p>
         </div>
         <hr>
     <% } %>
@@ -70,21 +69,18 @@ layout: page
                 </p>
                 -->
                 <div class="tags">
-                    <a href="<%- url_for(post.path) %>"><%= __('read more') %></a>
+                    <% if (post.tags.length) { %>
+                    Tags:
+                    <% } %>
                     <% post.tags.forEach(function(tag){ %>
                       <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
                     <% }) %>
                 </div>
-                <div class="readmore">
-                    <a href="<%- url_for(post.path) %>"><%= __('read more') %></a>
-                
-                </div>
-            <%} else {%>
-                <p class="post-meta">
-                    Posted by <%- post.author || config.author %> on
-                    <%= post.date.format(config.date_format) %>
-                </p>
             <%}%>
+            <p class="post-meta">
+                Posted by <%- post.author || config.author %> on
+                <%= post.date.format(config.date_format) %>
+            </p>
         </div>
         <hr>
     <% } %>

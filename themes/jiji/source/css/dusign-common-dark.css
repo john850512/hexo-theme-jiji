@@ -1,6 +1,6 @@
 /* 滚动条背景与宽度 */
 ::-webkit-scrollbar {
-	width: 6px;
+	width: 14px;
 	background: none;
 	height: 6px;
 }
@@ -129,8 +129,8 @@
 	margin:0px;
 	padding:0px;
 	position:absolute;
-	top:-37px;
-	left:-15px;
+	top:0px;
+	left:0px;
 	cursor:default!important;
 }
 /* gitment */
@@ -420,6 +420,5 @@ code{
 .provisional_notice{
 	color:white;
 }
-
 
 

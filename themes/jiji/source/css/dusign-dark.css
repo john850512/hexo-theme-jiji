@@ -1,21 +1,260 @@
-/* dark start */
+/* ------------------------------------------------------------------------- */
+/* |                          global setting                               | */
+/* ------------------------------------------------------------------------- */
 body{
-  background: rgb(34, 38, 49);
-  color: rgb(97, 101, 111); /* 普通文字颜色 rgb(97, 101, 111) */
+  background: #121212;
+  color: rgb(255, 255, 255, 0.6); /* 普通文字颜色 rgb(97, 101, 111) */
 }
-.post-title, .post-subtitle{
-  color: rgb(199, 200, 206); /* 高亮文字颜色 rgb(197, 198, 203) */
+body {
+  /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */
+  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+  font-size: 17px;
+  color: #404040;
+  overflow-x: hidden;
 }
-.post-content-preview:hover,
-.post-content-preview:hover ~ .post-title, 
-.post-content-preview:hover ~ .post-subtitle{
-  color: rgb(199, 200, 206)!important; /* hover文字，线条颜色 rgb(199, 200, 206) */
+p {
+  margin: 30px 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */
+  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  line-height: 1.1;
+  font-weight: bold;
+}
+/* href hover in post */
+a {
+  color: #0984e3;
+}
+a:hover,
+a:focus {
+  color: #6c5ce7;
+}
+
+a img:hover,
+a img:focus {
+  cursor: zoom-in;
+}
+article {
+  overflow-x: hidden;
+}
+blockquote {
+  color: rgb(255, 255, 255, 0.38);
+  font-style: italic;
+  font-size: 1em;
+  margin: 15px 0 15px;
+}
+blockquote p {
+  margin: 0;
+}
+small.img-hint {
+  display: block;
+  margin-top: -20px;
+  text-align: center;
+}
+br + small.img-hint {
+  margin-top: -40px;
+}
+img {
+  margin: 5px auto 5px;
+  border-radius: 8px;
+  display: block;
+}
+
+img::selection {
+  color: white;
+  background: transparent;
+}
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+img.shadow {
+  box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
 }
 hr{
   background-color: rgb(74, 74, 74); /* hr颜色 rgb(74, 74, 74) */
   border: none;
   height: 1px;
 }
+
+/* global setting end */
+
+
+/* ------------------------------------------------------------------------- */
+/* |                            post content                               | */
+/* ------------------------------------------------------------------------- */
+.post-container{
+  color: rgb(255, 255, 255, 0.60);
+  text-align: justify; 
+}
+
+.post-container h1,
+.post-container h2,
+.post-container h3,
+.post-container h4,
+.post-container h5,
+.post-container h6 {
+  margin: 3px 0 5px;
+}
+.post-container h1 {
+  font-size: 32px;
+  color: rgb(0, 206, 201, 1.0);
+}
+.post-container h2 {
+  font-size: 28px;
+  color: rgb(214, 48, 49, 1.0);
+}
+.post-container h3 {
+  font-size: 24px;
+  color: rgba(253, 203, 110,1.0);
+}
+.post-container h4 {
+  font-size: 20px;
+}
+.post-container h5 {
+  font-size: 16px;
+}
+.post-container h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+}
+.post-container h6 + p {
+  margin-top: 5px;
+}
+.post-container ul,
+.post-container ol {
+  margin-bottom: 40px;
+}
+.post-container ol ol,
+.post-container ol ul,
+.post-container ul ol,
+.post-container ul ul {
+  margin-bottom: 5px;
+}
+.post-container li p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.post-container li h1,
+.post-container li h2,
+.post-container li h3,
+.post-container li h4,
+.post-container li h5,
+.post-container li h6 {
+  line-height: 2;
+  margin-top: 20px;
+}
+.post-container .tags a {
+  color: gray;
+  border-color: gray;
+}
+.post-container .tags a:hover,
+.post-container .tags a:active {
+  color: #0085a1;
+  border-color: #0085a1;
+}
+
+.post-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto 1.6em auto;
+}
+/* post content end */
+
+/* ------------------------------------------------------------------------- */
+/* |                            post preview                               | */
+/* ------------------------------------------------------------------------- */
+.post-title, .post-subtitle{
+  color: rgb(255, 255, 255, 0.87); /* 高亮文字颜色 rgb(197, 198, 203) */
+}
+
+.post-title h2 {
+  color: rgb(255, 255, 255, 0.87)!important;
+}
+
+.post-content-preview:hover,
+.post-content-preview:hover ~ .post-title, 
+.post-content-preview:hover ~ .post-subtitle{
+  color: rgb(255, 255, 255, 0.87); /* hover文字，线条颜色 rgb(199, 200, 206) */
+}
+
+.post-content-preview {
+  font-size: 16px;
+  font-style: italic;
+  color: rgb(255, 255, 255, 0.60);
+  text-align: justify; 
+}
+/* .post-content-preview:hover {
+  color: #0085a1;
+} */
+
+
+.post-preview h1 {
+  font-size: 24px;
+}
+
+/* post preview end */
+
+
+/* ------------------------------------------------------------------------- */
+/* |                         read more button                              | */
+/* ------------------------------------------------------------------------- */
+.post-read-more {
+  display: inline-block;
+  border: 1px solid #fdcb6e;
+  border-radius: 99em;
+  padding: 0 20px;
+  line-height: 24px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 1px;
+  margin-left: auto;
+  margin-bottom: 6px;
+}
+.post-read-more a{
+  color: #fdcb6e!important;
+  text-decoration: none;
+}
+.post-read-more:hover,
+.post-read-more:active {
+  color: white;
+  border-color: #fdcb6e;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+/* read more button end */
+
+/* ------------------------------------------------------------------------- */
+/* |                         table of content                              | */
+/* ------------------------------------------------------------------------- */
+#toc{
+  color: rgb(255, 255, 255, 0.6);
+}
+#toc a{
+  color: rgb(255, 255, 255, 0.38);
+}
+#toc a:hover{
+  color: rgb(255, 255, 255, 0.6);
+}
+/* table of content end */
+
 .previous a, .next a{
   background: none!important;
   color: rgb(199, 200, 206)!important;
@@ -26,8 +265,9 @@ hr{
   color: rgb(199, 200, 206)!important;
   border-color: none!important;
 }
+
 .sidebar-container h5{
-  color: rgb(128, 128, 128)!important;
+  color: #55efc4!important;
 }
 .sidebar-container h5 a:hover{
   color: rgb(199, 200, 206)!important;
@@ -36,10 +276,12 @@ hr{
   color: rgb(199, 200, 206)!important;
   border-color: rgb(199, 200, 206)!important;
 }
+
 .tags a:hover{
   color: rgb(199, 200, 206)!important;
   border-color: rgb(199, 200, 206)!important;
 }
+
 .list-inline li a{
   color: rgb(97, 101, 111)!important;
 }
@@ -47,45 +289,30 @@ hr{
   color: rgb(199, 200, 206)!important; /* hover按钮背景颜色 rgb(122, 125, 131) */
   text-decoration:none;
 }
+
 .short-about ul li a{
   color: rgb(64, 64, 64)!important;  /* 按钮背景颜色 rgb(64, 64, 64) */
 }
 .short-about ul li a:hover, .short-about ul li a:active{
   color: rgb(122, 125, 131)!important; /* tag hover颜色 rgb(122, 125, 131) */
 }
+
 .widget ul li{
   color: rgb(97, 101, 111)!important;
 }
 .widget ul li a{
   color: rgb(97, 101, 111)!important;
 }
-.category-list-count{
-  color: rgb(97, 101, 111)!important;
-}
 .widget ul li a:hover{
   color: rgb(199, 200, 206)!important;
 }
 
+.category-list-count{
+  color: rgb(97, 101, 111)!important;
+}
+
 .copyright a{
   color: rgb(199, 200, 206)!important;
-}
-.post-container{
-  color: rgb(199, 200, 206);
-}
-.post-container p a{
-  color: rgb(97, 101, 111);
-}
-.post-container p a:hover{
-  color: rgb(199, 200, 206);
-}
-#toc{
-  color: rgb(199, 200, 206);
-}
-#toc a{
-  color: rgb(97, 101, 111);
-}
-#toc a:hover{
-  color: rgb(199, 200, 206);
 }
 
 .one-tag-list .listing-seperator{
@@ -97,11 +324,11 @@ hr{
 .one-tag-list ul li a:hover{
   color:rgb(199, 200, 206)!important;
 }
+
 #tag_clouds a{   /* tags 界面标签，正在寻找bug */
   background:rgb(120,97,224)!important;
   background-image: linear-gradient(to bottom,rgb(130,93,225) 0,rgb(80,118,221))!important;
 }
-/* dark and */
 
 @media (min-width: 1200px) {
   .post-container,
@@ -156,74 +383,7 @@ hr{
   padding-left: 0px;
 }
 
-body {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #404040;
-  overflow-x: hidden;
-}
-p {
-  margin: 30px 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.7;
-  line-height: 1.1;
-  font-weight: bold;
-}
-h4 {
-  font-size: 21px;
-}
-a {
-  color: #404040;
-}
-a:hover,
-a:focus {
-  color: #0085a1;
-}
-a img:hover,
-a img:focus {
-  cursor: zoom-in;
-}
-article {
-  overflow-x: hidden;
-}
-blockquote {
-  color: #808080;
-  font-style: italic;
-  font-size: 0.95em;
-  margin: 20px 0 20px;
-}
-blockquote p {
-  margin: 0;
-}
-small.img-hint {
-  display: block;
-  margin-top: -20px;
-  text-align: center;
-}
-br + small.img-hint {
-  margin-top: -40px;
-}
-img.shadow {
-  box-shadow: rgba(0, 0, 0, 0.258824) 0px 2px 5px 0px;
-}
+
 @media screen and (max-width: 768px) {
   select {
     -webkit-appearance: none;
@@ -266,41 +426,7 @@ pre code {
   white-space: pre;
   word-wrap: normal;
 }
-.post-container a {
-  color: #337ab7;
-}
-.post-container a:hover,
-.post-container a:focus {
-  color: #0085a1;
-}
-.post-container h1,
-.post-container h2,
-.post-container h3,
-.post-container h4,
-.post-container h5,
-.post-container h6 {
-  margin: 30px 0 10px;
-}
-.post-container h5 {
-  font-size: 19px;
-  font-weight: 600;
-  color: gray;
-}
-.post-container h5 + p {
-  margin-top: 5px;
-}
-.post-container h6 {
-  font-size: 16px;
-  font-weight: 600;
-  color: gray;
-}
-.post-container h6 + p {
-  margin-top: 5px;
-}
-.post-container ul,
-.post-container ol {
-  margin-bottom: 40px;
-}
+
 @media screen and (max-width: 768px) {
   .post-container ul,
   .post-container ol {
@@ -312,34 +438,6 @@ pre code {
   .post-container ol {
     padding-left: 20px;
   }
-}
-.post-container ol ol,
-.post-container ol ul,
-.post-container ul ol,
-.post-container ul ul {
-  margin-bottom: 5px;
-}
-.post-container li p {
-  margin: 0;
-  margin-bottom: 5px;
-}
-.post-container li h1,
-.post-container li h2,
-.post-container li h3,
-.post-container li h4,
-.post-container li h5,
-.post-container li h6 {
-  line-height: 2;
-  margin-top: 20px;
-}
-.post-container .tags a {
-  color: gray;
-  border-color: gray;
-}
-.post-container .tags a:hover,
-.post-container .tags a:active {
-  color: #0085a1;
-  border-color: #0085a1;
 }
 
 @media only screen and (max-width: 767px) {
@@ -614,14 +712,16 @@ pre code {
     font-size: 20px;
   }
 }
-.post-preview > a {
+/* .post-preview > a {
   color: #404040;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
   color: #0085a1;
-}
+}  */
+
+
 .post-preview > a > .post-title {
   font-size: 21px;
   line-height: 1.3;
@@ -646,11 +746,13 @@ pre code {
   text-decoration: none;
   color: #404040;
 }
-.post-preview > .post-meta > a:hover,
+
+/* .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
   color: #0085a1;
   text-decoration: underline;
-}
+} */
+
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
     font-size: 26px;
@@ -661,22 +763,13 @@ pre code {
     font-size: 16px;
   }
   .post-preview .post-meta {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
-.post-content-preview {
-  font-size: 13px;
-  font-style: italic;
-  color: #a3a3a3;
-}
-.post-content-preview:hover {
-  color: #0085a1;
-}
-@media only screen and (min-width: 768px) {
-  .post-content-preview {
-    font-size: 14px;
-  }
-}
+
+
+
+
 .section-heading {
   font-size: 36px;
   margin-top: 60px;
@@ -842,14 +935,8 @@ form .row:first-child .floating-label-form-group {
   text-shadow: none;
   background: #0085a1;
 }
-img::selection {
-  color: white;
-  background: transparent;
-}
-img::-moz-selection {
-  color: white;
-  background: transparent;
-}
+
+
 body {
   webkit-tap-highlight-color: #0085a1;
 }
@@ -985,13 +1072,7 @@ body {
   }
 }
 /* Tags support End*/
-/* Hux make all img responsible in post-container */
-.post-container img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 1.5em auto 1.6em auto;
-}
+
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
